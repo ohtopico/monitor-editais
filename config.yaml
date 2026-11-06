@@ -134,8 +134,10 @@ fontes:
       url: https://www.ufsm.br/editais
     - nome: IFFar - Editais
       url: https://www.iffarroupilha.edu.br/editais
-    - nome: Prefeitura de Santa Maria - Concursos
-      url: https://www.santamaria.rs.gov.br/concursos
+    # O site da Prefeitura de Santa Maria não responde aos servidores do
+    # GitHub (testado em 2026-11-06); os editais dela chegam pelo Google Notícias.
+    # - nome: Prefeitura de Santa Maria - Concursos
+    #   url: https://www.santamaria.rs.gov.br/concursos
     - nome: Prefeitura de Santa Cruz do Sul - Concursos
       url: https://www.santacruz.rs.gov.br/concursos
 
