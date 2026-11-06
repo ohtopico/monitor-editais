@@ -4,7 +4,7 @@ from pathlib import Path
 import yaml
 
 from monitor import __main__ as app
-from monitor.avisos import corpo_email, mensagens_telegram
+from monitor.avisos import corpo_email
 from monitor.fontes import Item, google_noticias, paginas, pci
 from monitor.texto import Filtro
 
@@ -114,12 +114,6 @@ def _item(n):
                 lugares=["agudo"], data=datetime.now(timezone.utc))
 
 
-def test_telegram_divide_e_escapa():
-    msgs = mensagens_telegram([_item(i) for i in range(80)], "Novos editais")
-    assert len(msgs) > 1 and all(len(m) <= 4096 for m in msgs)
-    assert "&lt;0&gt;" in msgs[0]
-
-
 def test_email():
     texto, corpo = corpo_email([_item(1)], "1 novo edital")
     assert "https://ex.com/1" in texto and "&lt;1&gt;" in corpo
@@ -128,8 +122,8 @@ def test_email():
 def test_fluxo_completo(tmp_path, monkeypatch):
     enviados = []
     monkeypatch.setattr(app, "RAIZ", tmp_path)
-    monkeypatch.setattr(app.avisos, "canal_configurado", lambda c: c == "telegram")
-    monkeypatch.setitem(app.avisos.CANAIS, "telegram", lambda itens, cab: enviados.append((len(itens), cab)))
+    monkeypatch.setattr(app.avisos, "canal_configurado", lambda c: c == "email")
+    monkeypatch.setitem(app.avisos.CANAIS, "email", lambda itens, cab: enviados.append((len(itens), cab)))
     lote = [_item(i) for i in range(15)]
     monkeypatch.setattr(app, "coletar", lambda c, f: (list(lote), []))
     estado = tmp_path / "vistos.json"

@@ -136,7 +136,7 @@ def main(argv: list[str] | None = None) -> int:
                          else f"{len(novos)} novos editais de professor na região")
         canais = [c for c in config.get("avisos", {}).get("canais", []) if avisos.canal_configurado(c)]
         if not canais:
-            print("Nenhum canal de aviso configurado (veja o README). O estado não foi salvo "
+            print("E-mail não configurado (veja o README). O estado não foi salvo "
                   "para que os editais sejam avisados quando um canal for configurado.", file=sys.stderr)
             return 0
         sucesso = False

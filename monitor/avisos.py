@@ -1,7 +1,6 @@
-"""Envio dos avisos por Telegram e e-mail.
+"""Envio dos avisos por e-mail.
 
 As credenciais vêm de variáveis de ambiente (secrets do GitHub):
-  TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
   EMAIL_USUARIO, EMAIL_SENHA, EMAIL_PARA  (e opcionais SMTP_HOST, SMTP_PORTA)
 """
 
@@ -12,52 +11,7 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-import requests
-
 from .fontes import Item
-
-LIMITE_TELEGRAM = 3800  # a API aceita 4096 caracteres por mensagem
-
-
-def _linha_telegram(item: Item) -> str:
-    partes = [f'• <a href="{html.escape(item.link, quote=True)}">{html.escape(item.titulo)}</a>']
-    if item.detalhes:
-        partes.append(f"  {html.escape(item.detalhes)}")
-    rodape = item.fonte
-    lugares = [l for l in item.lugares[:3] if l != item.fonte]
-    if lugares:
-        rodape += " · " + ", ".join(lugares)
-    partes.append(f"  <i>{html.escape(rodape)}</i>")
-    return "\n".join(partes)
-
-
-def mensagens_telegram(itens: list[Item], cabecalho: str) -> list[str]:
-    msgs, atual = [], f"<b>{html.escape(cabecalho)}</b>\n"
-    for item in itens:
-        linha = _linha_telegram(item) + "\n"
-        if len(atual) + len(linha) > LIMITE_TELEGRAM:
-            msgs.append(atual)
-            atual = ""
-        atual += "\n" + linha
-    msgs.append(atual)
-    return msgs
-
-
-def enviar_telegram(itens: list[Item], cabecalho: str) -> None:
-    token = os.environ.get("TELEGRAM_TOKEN")
-    chat = os.environ.get("TELEGRAM_CHAT_ID")
-    if not (token and chat):
-        raise RuntimeError("faltam os secrets TELEGRAM_TOKEN e/ou TELEGRAM_CHAT_ID")
-    for texto in mensagens_telegram(itens, cabecalho):
-        r = requests.post(
-            f"https://api.telegram.org/bot{token}/sendMessage",
-            json={"chat_id": chat, "text": texto, "parse_mode": "HTML",
-                  "disable_web_page_preview": True},
-            timeout=30,
-        )
-        if not r.ok:
-            raise RuntimeError(f"Telegram respondeu {r.status_code}: {r.text[:200]}")
-
 
 def corpo_email(itens: list[Item], cabecalho: str) -> tuple[str, str]:
     texto = [cabecalho, ""]
@@ -106,12 +60,10 @@ def enviar_email(itens: list[Item], cabecalho: str) -> None:
         smtp.send_message(msg)
 
 
-CANAIS = {"telegram": enviar_telegram, "email": enviar_email}
+CANAIS = {"email": enviar_email}
 
 
 def canal_configurado(canal: str) -> bool:
-    if canal == "telegram":
-        return bool(os.environ.get("TELEGRAM_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID"))
     if canal == "email":
         return bool(os.environ.get("EMAIL_USUARIO") and os.environ.get("EMAIL_SENHA"))
     return False

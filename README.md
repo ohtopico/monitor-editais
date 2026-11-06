@@ -1,6 +1,6 @@
 # Monitor de editais para professores
 
-Procura concursos e processos seletivos para **professores** na Região Central e no Vale do Rio Pardo (RS) duas vezes por dia e avisa o que for novo por **Telegram** e/ou **e-mail**. Roda sozinho no GitHub Actions, sem servidor e sem custo.
+Procura concursos e processos seletivos para **professores** na Região Central e no Vale do Rio Pardo (RS) duas vezes por dia e avisa o que for novo por **e-mail**. Roda sozinho no GitHub Actions, sem servidor e sem custo.
 
 Também publica uma página com os editais abertos (GitHub Pages, pasta `docs/`).
 
@@ -18,39 +18,25 @@ Tudo isso fica em [`config.yaml`](config.yaml): municípios, instituições, pal
 
 ## Como ligar
 
-### 1. Telegram
-1. No Telegram, fale com o **@BotFather**, mande `/newbot` e guarde o **token**.
-2. Mande um "oi" para o seu bot novo.
-3. Descubra o seu chat_id:
-   ```bash
-   pip install -r requirements.txt
-   TELEGRAM_TOKEN=seu_token python -m monitor.telegram_chat_id
-   ```
-   (Para avisar num grupo, adicione o bot ao grupo, mande uma mensagem lá e rode de novo.)
-
-### 2. E-mail (opcional)
+### 1. Senha de app do e-mail
 Com Gmail, crie uma **senha de app** em <https://myaccount.google.com/apppasswords> (exige verificação em duas etapas). A senha normal da conta não funciona.
 
-### 3. Secrets do repositório
+### 2. Secrets do repositório
 Em **Settings → Secrets and variables → Actions → New repository secret**:
 
 | Secret | Valor |
 |---|---|
-| `TELEGRAM_TOKEN` | token do BotFather |
-| `TELEGRAM_CHAT_ID` | número que o passo 1 mostrou |
 | `EMAIL_USUARIO` | seu e-mail (remetente) |
 | `EMAIL_SENHA` | a senha de app |
 | `EMAIL_PARA` | quem recebe (se vazio, vai para o próprio remetente) |
 | `SMTP_HOST`, `SMTP_PORTA` | só se não for Gmail (padrão `smtp.gmail.com`, `465`) |
 
-Basta configurar um dos canais. Canal sem secret é pulado.
-
-### 4. Rodar
+### 3. Rodar
 Em **Actions → Monitor de editais → Run workflow**. Depois disso ele roda sozinho às 9h e às 18h (horário de Brasília).
 
 Na **primeira execução** ele não despeja tudo: manda um resumo com até 10 editais abertos e, dali em diante, só os novos. O que já foi avisado fica em `dados/vistos.json`.
 
-### 5. Página (opcional)
+### 4. Página (opcional)
 Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/docs`.
 
 ## Rodar no computador
@@ -65,7 +51,7 @@ python -m pytest -q         # testes
 
 - Sites mudam de endereço e de layout. Quando uma fonte falha, as outras continuam e o problema aparece no resumo da execução no Actions ("Fontes com problema").
 - Para acrescentar uma prefeitura, adicione a página de editais dela em `fontes.paginas` no `config.yaml`.
-- Se nenhum canal estiver configurado, o monitor não marca nada como visto, para não perder editais antes de você ligar os avisos.
+- Enquanto o e-mail não estiver configurado, o monitor não marca nada como visto, para não perder editais antes de você ligar os avisos.
 
 ## Licença
 

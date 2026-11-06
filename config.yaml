@@ -142,10 +142,9 @@ fontes:
       url: https://www.santacruz.rs.gov.br/concursos
 
 avisos:
-  # Canais: telegram, email (pode usar os dois). As credenciais ficam nos
-  # secrets do GitHub, nunca aqui. Veja o README.
+  # Por enquanto só e-mail. As credenciais ficam nos secrets do GitHub,
+  # nunca aqui. Veja o README.
   canais:
-    - telegram
     - email
   # Na primeira execução não manda tudo que já existe: só um resumo com
   # até este número de itens.
