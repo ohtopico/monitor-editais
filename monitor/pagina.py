@@ -76,7 +76,7 @@ def _li(item: Item) -> str:
     meta = [item.fonte]
     if item.data:
         meta.append(item.data.astimezone(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y"))
-    meta += item.lugares[:3]
+    meta += [l for l in item.lugares[:3] if l != item.fonte]
     meta_html = " · ".join(f"<span>{html.escape(m)}</span>" for m in meta)
     return (f'<li><a href="{html.escape(item.link, quote=True)}" rel="noopener">{html.escape(item.titulo)}</a>'
             f'{det}<div class="meta">{meta_html}</div></li>')

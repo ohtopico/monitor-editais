@@ -40,23 +40,30 @@ def salvar_estado(caminho: Path, estado: dict, dias: int) -> None:
 def coletar(config: dict, filtro: Filtro) -> tuple[list[Item], list[str]]:
     brutos: list[Item] = []
     erros: list[str] = []
+    contagem: dict[str, int] = {}
     fontes = config.get("fontes", {})
 
     if fontes.get("google_noticias", {}).get("ativo"):
         try:
-            brutos += google_noticias.coletar(config)
+            achados = google_noticias.coletar(config)
+            contagem["Google Notícias"] = len(achados)
+            brutos += achados
         except Exception as e:
             erros.append(f"Google Notícias: {e}")
     if fontes.get("pci_concursos", {}).get("ativo"):
         try:
-            brutos += pci.coletar(config)
+            achados = pci.coletar(config)
+            contagem["PCI Concursos"] = len(achados)
+            brutos += achados
         except Exception as e:
             erros.append(f"PCI Concursos: {e}")
     if fontes.get("paginas"):
         achados, errs = paginas.coletar(config, filtro)
+        contagem["Sites de editais"] = len(achados)
         brutos += achados
         erros += errs
 
+    print("Itens lidos por fonte (antes do filtro): " + ", ".join(f"{k}: {v}" for k, v in contagem.items()))
     limite = datetime.now(timezone.utc) - timedelta(days=int(config.get("dias_maximos", 45)))
     aceitos: dict[str, Item] = {}
     titulos: set[str] = set()
@@ -104,7 +111,7 @@ def main(argv: list[str] | None = None) -> int:
     for e in erros:
         print(f"AVISO: fonte com problema: {e}", file=sys.stderr)
     for i in novos:
-        print(f"- {i.titulo}\n  {i.link}\n  {i.fonte} · {', '.join(i.lugares)}")
+        print(f"- {i.titulo}\n  {i.link}\n  {' · '.join(dict.fromkeys([i.fonte, *i.lugares]))}")
 
     linhas = [f"## Monitor de editais", f"{len(itens)} editais na região, **{len(novos)} novos**.", ""]
     linhas += [f"- [{i.titulo}]({i.link}) · {i.fonte}" for i in novos[:50]]

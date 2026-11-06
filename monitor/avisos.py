@@ -24,8 +24,9 @@ def _linha_telegram(item: Item) -> str:
     if item.detalhes:
         partes.append(f"  {html.escape(item.detalhes)}")
     rodape = item.fonte
-    if item.lugares:
-        rodape += " · " + ", ".join(item.lugares[:3])
+    lugares = [l for l in item.lugares[:3] if l != item.fonte]
+    if lugares:
+        rodape += " · " + ", ".join(lugares)
     partes.append(f"  <i>{html.escape(rodape)}</i>")
     return "\n".join(partes)
 
