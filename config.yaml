@@ -1,0 +1,150 @@
+# Configuração do monitor de editais.
+# Edite à vontade: o monitor lê este arquivo a cada execução.
+
+# Municípios da região. Um edital só entra se citar um destes nomes
+# (ou uma das instituições abaixo). Acentos e maiúsculas não importam.
+municipios:
+  # Região Central
+  - Santa Maria
+  - Itaara
+  - Silveira Martins
+  - São Martinho da Serra
+  - Restinga Sêca
+  - Formigueiro
+  - São Sepé
+  - Dilermando de Aguiar
+  - São Pedro do Sul
+  - Toropi
+  - Júlio de Castilhos
+  - Pinhal Grande
+  - Ivorá
+  - Nova Palma
+  - Faxinal do Soturno
+  - Dona Francisca
+  - São João do Polêsine
+  - Agudo
+  - Paraíso do Sul
+  - Cachoeira do Sul
+  - Novo Cabrais
+  - Cerro Branco
+  # Vale do Rio Pardo
+  - Santa Cruz do Sul
+  - Venâncio Aires
+  - Rio Pardo
+  - Candelária
+  - Arroio do Tigre
+  - Passa Sete
+  - Vale do Sol
+  - Sinimbu
+  - Herveiras
+  - Gramado Xavier
+  - Boqueirão do Leão
+  - Pantano Grande
+  - Passo do Sobrado
+  - Encruzilhada do Sul
+  - Mato Leitão
+  - Vale Verde
+  - General Câmara
+  - Lagoa Bonita do Sul
+  - Estrela Velha
+  - Ibarama
+  - Lagoão
+
+# Nomes que também são palavras comuns ou existem em outros estados.
+# Só contam quando aparecem como "Prefeitura de X", "Município de X" ou "X/RS".
+municipios_ambiguos:
+  - Mata
+  - Segredo
+  - Tunas
+  - Sobradinho
+  - Vera Cruz
+
+# Instituições de ensino da região (contam como "da região" mesmo sem
+# o nome do município no texto).
+instituicoes:
+  - UFSM
+  - Universidade Federal de Santa Maria
+  - IFFar
+  - Instituto Federal Farroupilha
+  - UNISC
+  - Universidade de Santa Cruz do Sul
+  - UFN
+  - Universidade Franciscana
+  - Colégio Politécnico
+  - Colégio Técnico Industrial de Santa Maria
+  - 8ª CRE
+  - 6ª CRE
+  - 24ª CRE
+
+# Palavras que indicam vaga para professor (basta uma).
+palavras_cargo:
+  - professor
+  - professora
+  - professores
+  - docente
+  - docentes
+  - magisterio
+  - educador
+  - educadora
+  - educadores
+  - pedagogo
+  - pedagoga
+  - monitor escolar
+  - educacao infantil
+
+# Palavras que indicam seleção (basta uma).
+palavras_selecao:
+  - concurso
+  - processo seletivo
+  - selecao
+  - seletivo
+  - edital
+  - contratacao emergencial
+  - contratacao temporaria
+  - inscricoes
+  - vagas
+
+# Notícias mais antigas que isto (em dias) são ignoradas.
+dias_maximos: 45
+
+fontes:
+  # Busca no Google Notícias (RSS público, não precisa de chave).
+  google_noticias:
+    ativo: true
+    # Quantos municípios entram em cada busca (buscas menores = mais precisas).
+    municipios_por_busca: 8
+    buscas_extras:
+      - '"processo seletivo" professor UFSM'
+      - 'concurso professor "Instituto Federal Farroupilha"'
+      - '"contratação emergencial" professores "8ª CRE"'
+      - '"contratação emergencial" professores "6ª CRE"'
+
+  # PCI Concursos: listas da região Sul e de professores.
+  pci_concursos:
+    ativo: true
+    paginas:
+      - https://www.pciconcursos.com.br/concursos/sul/
+      - https://www.pciconcursos.com.br/professores/
+
+  # Páginas de editais (prefeituras, universidades). O monitor guarda os
+  # links que parecem editais de professor e avisa quando surgir um novo.
+  # Se uma página mudar de endereço, a execução avisa no resumo e segue.
+  paginas:
+    - nome: UFSM - Editais
+      url: https://www.ufsm.br/editais
+    - nome: IFFar - Editais
+      url: https://www.iffarroupilha.edu.br/editais
+    - nome: Prefeitura de Santa Maria - Concursos
+      url: https://www.santamaria.rs.gov.br/concursos
+    - nome: Prefeitura de Santa Cruz do Sul - Concursos
+      url: https://www.santacruz.rs.gov.br/concursos
+
+avisos:
+  # Canais: telegram, email (pode usar os dois). As credenciais ficam nos
+  # secrets do GitHub, nunca aqui. Veja o README.
+  canais:
+    - telegram
+    - email
+  # Na primeira execução não manda tudo que já existe: só um resumo com
+  # até este número de itens.
+  limite_primeira_execucao: 10
