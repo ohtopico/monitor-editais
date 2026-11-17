@@ -30,8 +30,18 @@
   "data": null
  },
  {
-  "titulo": "Ordem de Serviço para análise da documentação dos inscritos no Edital 027/2026 - Edital de Seleção de Docente-bolsista FORMATEC SUS UFSM",
-  "link": "https://www.ufsm.br/app/uploads/sites/405/2026/11/Ordem_de_Servico_012.2026_formatec_SUS.pdf",
+  "titulo": "078/2026 – Seleção de Docente Tutor(a) do Programa de Educação Tutorial (PET) – Ciência da Computação",
+  "link": "https://www.ufsm.br/pro-reitorias/prograd/editais/078-2026",
+  "fonte": "UFSM - Editais",
+  "detalhes": "",
+  "lugares": [
+   "UFSM - Editais"
+  ],
+  "data": null
+ },
+ {
+  "titulo": "Abertura de Inscrições - Seleção de Docente Tutor(a) do Programa de Educação Tutorial (PET) - Ciência da Computação",
+  "link": "https://www.ufsm.br/app/uploads/sites/342/2026/11/EDITAL_078_2026_PROGRAD_UFSM-SELECAO_TUTOR_A_PET_CIENCIA_DA_COMPUTACAO.pdf",
   "fonte": "UFSM - Editais",
   "detalhes": "",
   "lugares": [
@@ -50,36 +60,6 @@
   "data": null
  },
  {
-  "titulo": "Abertura de Inscrições - Seleção de Docente Tutor(a) do Programa de Educação Tutorial (PET) - Ciência da Computação",
-  "link": "https://www.ufsm.br/app/uploads/sites/342/2026/11/EDITAL_078_2026_PROGRAD_UFSM-SELECAO_TUTOR_A_PET_CIENCIA_DA_COMPUTACAO.pdf",
-  "fonte": "UFSM - Editais",
-  "detalhes": "",
-  "lugares": [
-   "UFSM - Editais"
-  ],
-  "data": null
- },
- {
-  "titulo": "221/2026 – Concurso Público para Professor da Carreira do Magistério Superior",
-  "link": "https://www.ufsm.br/pro-reitorias/progep/editais/221-2026",
-  "fonte": "UFSM - Editais",
-  "detalhes": "",
-  "lugares": [
-   "UFSM - Editais"
-  ],
-  "data": null
- },
- {
-  "titulo": "027/2026 – Processo Seletivo de Docente-Bolsista do Programa FormaTec SUS UFSM (Curso Técnico em Enfermagem – Noturno)",
-  "link": "https://www.ufsm.br/unidades-universitarias/politecnico/editais/027-2026",
-  "fonte": "UFSM - Editais",
-  "detalhes": "",
-  "lugares": [
-   "UFSM - Editais"
-  ],
-  "data": null
- },
- {
   "titulo": "029/2026 – Concurso Público para Professor da Carreira do Magistério Superior",
   "link": "https://www.ufsm.br/pro-reitorias/progep/editais/029-2026",
   "fonte": "UFSM - Editais",
@@ -90,25 +70,75 @@
   "data": null
  },
  {
-  "titulo": "078/2026 – Seleção de Docente Tutor(a) do Programa de Educação Tutorial (PET) – Ciência da Computação",
-  "link": "https://www.ufsm.br/pro-reitorias/prograd/editais/078-2026",
-  "fonte": "UFSM - Editais",
+  "titulo": "Universidade Federal de Santa Maria abre concurso para 6 vagas de professores assistentes",
+  "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNkFwRXVsVE9GRXdIeDU3QTBXQ183bV9XdGZLdUY1QnlDdFE2QUVwdGpsT0Q2S1pUaXh4cTlMMWVLX2o4OWtLQWtjQXNFcjZlSkJTNjJrTnNJVTd4VF9pUUhYY0F3Z1QyU3QtVmxXNzlMUTJnUVhMZ2lIVnFHNW1RYkFiQWE1YjFkV3BweTZ0dUJ1b3l0Tm1ScVRkN1BRQ0JZWjh2aTVwWENEaDNwNVZneHNkR1AwOFRjWG1TLQ?oc=5",
+  "fonte": "Google Notícias · Qconcursos Folha Dirigida",
   "detalhes": "",
   "lugares": [
-   "UFSM - Editais"
+   "Santa Maria",
+   "Universidade Federal de Santa Maria"
   ],
-  "data": null
+  "data": "2026-11-03T08:00:00+00:00"
  },
  {
   "titulo": "UFSM - RS abre concurso para professores do magistério superior",
-  "link": "https://www.pciconcursos.com.br/noticias/ufsm-rs-abre-concurso-para-professores-do-magisterio-superior",
-  "fonte": "PCI Concursos",
-  "detalhes": "6 vagas até R$ 13.753,98 Professor assistente Superior · inscrições até 02/12/2026",
+  "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVEJ3VEFUaGx5LW1xS25RMjVRLUdhTjFzY0RQdHZ4YWktMEtBZC1FYzIxSk5MSjAzQmo5V1J6UE1DWDd4ekVrQmxINWlGTlRVREo3RlM3Tk9GNVdQSVd5X0xnWGdzRndVWWMtMVJlekg5UVd2N3hoYnlHWEs2enp2cncxZmZPUVpkMzk1QWo4OE9XUnRneFVNbk9xVW1SNXB6cERhdA?oc=5",
+  "fonte": "Google Notícias · PCI Concursos",
+  "detalhes": "",
+  "lugares": [
+   "UFSM"
+  ],
+  "data": "2026-11-03T08:00:00+00:00"
+ },
+ {
+  "titulo": "UFSM - RS abre seleção pública para professores substitutos em Santa Maria e Frederico Westphalen",
+  "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQNElJRmdlaHN6UWx5akdPZHRZUjNjalV5X1JGNTJBR2ZWT1NkUWxsYTdGOHpqUUdPLWlEQXo2SVZHaWprbXBidm1ReTZ1X0JFRzdfMk40T3BMcU9YNUpNSWZxWXRLZ0xjeDdXc0prN203Qnc0UXNRVnUtQ0xueWYtQWhGY3NPYzIweUFMdFFRQ25qcUdxdjFiSEJxR0JBZUswOHJ5bG9uUFNZVi1iaE8xcUg5elhmaVMzUEtZQVF3dnd0ZXBpcVI4ajBYUnRvWjhUd1E?oc=5",
+  "fonte": "Google Notícias · PCI Concursos",
+  "detalhes": "",
   "lugares": [
    "Santa Maria",
-   "UFSM",
-   "Universidade Federal de Santa Maria"
+   "UFSM"
   ],
-  "data": null
+  "data": "2026-10-26T07:00:00+00:00"
+ },
+ {
+  "titulo": "Processo seletivo UFSM: 8 vagas para professor substituto com salários até R$ 8,3 mil",
+  "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeS1aZkFqTW9lMVFXeVVRZUhJZXM1VWtvUmpmOElhRGl6NHh0WDZwMkpZWGJSVlhNeVBWM3JFMjVxV2tvLWhIcG9DeUJjZzNjWnk3WnJBVHNTZVdYdXZpbXY4dnpyODYxZnBfUl9PTzRZbEdsRTNQR05nRl81NXpzQVU1ZmpXanVQWFd6MHcyaTFoQXJ6cFRRZnBKZzNBcTc2OFlZWUNxNTlDemwxVDlIMmxudUhLcGRMY19rQVpJb0g1dw?oc=5",
+  "fonte": "Google Notícias · Meu Preparatório",
+  "detalhes": "",
+  "lugares": [
+   "UFSM"
+  ],
+  "data": "2026-10-26T07:00:00+00:00"
+ },
+ {
+  "titulo": "Edital Restinga Sêca-RS: Prefeitura abre processo seletivo para professores",
+  "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOWZMaEZHTWhKelM4NVdoaHc5V3dYZnVPUzk0NERCcnl4LWdnRV9uSENuQUtVVWdBNlhDWEVqSktmYVBXNHZFOEJnX2prbTFXODAtZVhDanJRQ3dEYnZBLTNZMlRrXy1WdUlGbTNvRXlfUzBsNHZDLVBReFFtWjhMUWRnWUp0LV8zaFJhWUdrckNwUFBPai1Wb3lza2JXMjJnNW83bkt5OTJpZ1NHUnF0UmFWVlVaTVBtQVE?oc=5",
+  "fonte": "Google Notícias · Ache Concursos",
+  "detalhes": "",
+  "lugares": [
+   "Restinga Sêca"
+  ],
+  "data": "2026-10-09T07:00:00+00:00"
+ },
+ {
+  "titulo": "CHAMADA PÚBLICA PARA REDISTRIBUIÇÃO DOCENTE EDITAL N. 04 DE 2026/DLTE/CAL/UFSM",
+  "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNanJIYlA3dDc1aFoxQVpGUGFCTGtrMjBzZzNtdURoWGt1ZmQ1M2MwYjVGM2VXZ3lGc3I5a1RsRmh4V2FhWnBFQ3dmVVVtV2hKeWNramZiUUxqYVVLYzBNQ1dUX2hZblJDVVpJQlFMT2RhSGxSWDRuTGRaM2tMMkhaVmhLSmNmYzB5NWJzdHpiRFpnUWY4N1BBQVlsM3hyYl9ZcWFRVkRoWlhKRmZQSTZoTGJUMkZISXdzNnQ4dXhOM1NOSG5FMWhhNNIBzgFBVV95cUxOc3hocHM5Y1BGZXhWUjlWbXp1VER5T28yR3JZOU1MckJDcFdlVXlITUNhZUJqd1BTRU9kS0RrRl9WSlhvdmxYWVhrX3Fua2xmX3lRQkwwNk90Y2VpcTFhbkFUSjREeUc4VzZ2VlFhS0I1QklKalB5Y3hPcnFBbUZqZHFYMENtSWlWcnBIYlpqSldNSnR2LUl2cnNDeGliQ3RZbHppT1pfRDJQdjFlYWtSMTNJdkw5ZVc4Tm04QjVyNkp4aEFUblA0V284Nzl2QQ?oc=5",
+  "fonte": "Google Notícias · UFSM",
+  "detalhes": "",
+  "lugares": [
+   "UFSM"
+  ],
+  "data": "2026-10-09T07:00:00+00:00"
+ },
+ {
+  "titulo": "Prefeitura de Restinga Sêca RS publica edital de concurso para professores da educação",
+  "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTHBBOC1OVU1RZElWMmhiUk84eGpHS0lDWnlEbzVHUFRETDJLeUNNek9fdklFRXAxbzdjSlA1U052OS15TVFvZkZmTVNhcFVtLWdkbWxLNnh5cmtVUDZaRlZpaUZSdjFOTjdQR21LNTQwbXhNZkhvd29wM085NWMwMEdGejNBdnJoenRIQUJuaDBLZFZhY1BHUHhpa2lkMzVheDNPQXNEbXFKclozTTlLbG5DeFo4Tmt6?oc=5",
+  "fonte": "Google Notícias · Qconcursos Folha Dirigida",
+  "detalhes": "",
+  "lugares": [
+   "Restinga Sêca"
+  ],
+  "data": "2026-10-08T07:00:00+00:00"
  }
 ]
